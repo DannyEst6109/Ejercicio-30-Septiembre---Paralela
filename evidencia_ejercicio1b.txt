@@ -1,0 +1,10 @@
+$ mpicc -Wall -Wextra -pedantic Ejercicio1b.c -o Ejercicio1b
+$ mpirun --allow-run-as-root -np 4 ./Ejercicio1b
+Proceso 2: consumo = 180 kWh
+Proceso 1: consumo = 120 kWh
+Proceso 0: consumo = 150 kWh
+Proceso 3: consumo = 100 kWh
+
+Consumo total: 550 kWh
+Consumo maximo: 180 kWh
+Consumo minimo: 100 kWh

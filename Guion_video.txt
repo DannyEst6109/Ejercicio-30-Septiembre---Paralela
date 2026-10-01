@@ -1,0 +1,12 @@
+GUION PARA VIDEO - EJERCICIO 30 DE SEPTIEMBRE
+
+Duracion sugerida: 2 a 3 minutos.
+
+Integrante A a integrante B - MPI_Gather
+"MPI_Gather sirve para reunir datos individuales enviados por todos los procesos en un proceso raiz. En nuestro programa, cada proceso tiene dos temperaturas en el arreglo mediciones. sendbuf es mediciones, sendcount vale 2 y sendtype es MPI_FLOAT. El proceso raiz, que es el rank 0, recibe todo en el arreglo temperaturas. recvcount tambien vale 2, recvtype es MPI_FLOAT, y el comunicador es MPI_COMM_WORLD. El resultado conserva las mediciones de cada sucursal: las del rank 0 ocupan las posiciones 0 y 1, las del rank 1 las posiciones 2 y 3, y asi sucesivamente."
+
+Integrante B a integrante A - MPI_Reduce
+"MPI_Reduce combina un valor aportado por cada proceso y deja el resultado en el proceso raiz. En el ejercicio, sendbuf es consumo, recvbuf es la variable donde se guarda el resultado, count es 1, datatype es MPI_INT y root es 0. El parametro op indica la operacion usada. Con MPI_SUM obtenemos el consumo total de 550 kWh; con MPI_MAX obtenemos 180 kWh, el mayor consumo; y con MPI_MIN obtenemos 100 kWh, el menor consumo. A diferencia de Gather, Reduce no conserva todos los valores individuales: produce un resultado combinado."
+
+Cierre sugerido
+"Con estos ejercicios usamos MPI_Comm_rank y MPI_Comm_size para identificar los procesos, MPI_Gather para reunir datos sin combinarlos y MPI_Reduce para calcular valores agregados."
